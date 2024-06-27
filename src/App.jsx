@@ -1,35 +1,24 @@
+import CreateArea from "./components/CreateArea";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Note from "./components/Note";
+
 const App = () => {
   return (
     <div>
-      <header>
-        <div>
-          <h1>Keeper App</h1>
-        </div>
-      </header>
+      <Header />
 
       <main>
-        <section>
-          <form>
-            <input type="text" name="title" placeholder="Title" />
-            <textarea
-              name="content"
-              placeholder="take a note..."
-              rows={3}
-            ></textarea>
-            <button>Add</button>
-          </form>
+        <section className="wrapper">
+          <CreateArea />
 
-          <div>
-            <h1>Note</h1>
-            <p>Note content</p>
-            <button>Delete</button>
+          <div className="grid w-full grid-cols-1 place-content-center place-items-center gap-4 py-7 md:grid-cols-2 lg:grid-cols-3">
+            <Note title="Note title" content="Note content" />
           </div>
         </section>
-
-        <footer>
-          <p>Copyright C 2024</p>
-        </footer>
       </main>
+
+      <Footer />
     </div>
   );
 };

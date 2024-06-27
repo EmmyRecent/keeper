@@ -17,14 +17,29 @@
     @apply font-montserrat text-[100%];
   }
 
+  body {
+    @apply bg-[#eee];
+  }
+
   section {
-    @apply min-h-screen border-[2px] border-purple-900;
+    @apply min-h-screen;
+  }
+
+  form input,
+  form textarea {
+    @apply font-montserrat w-full resize-none border-none p-[4px];
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-primaryColor text-textColor shadow-button-shadow absolute bottom-[-18px] right-[18px] h-[36px] w-[36px] cursor-pointer rounded-[50%] border-none outline-none;
   }
 }
 
 @layer utilities {
   .wrapper {
-    width: min(1110px - calc(100% - 32px));
+    width: min(1110px, calc(100% - 32px));
     margin-inline: auto;
   }
 }

@@ -10,11 +10,12 @@ export default {
 
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
-        mcLaren: ["McLaren", "sans-serif"],
+        mcLaren: ["McLaren", "cursive"],
       },
 
       boxShadow: {
         "header-shadow": "0 0 10px 0 rgba(0, 0, 0, 0.3)",
+        "button-shadow": "0 1px 3px rgba(0, 0, 0, 0.3)",
         "note-shadow": "0 2px 5px #ccc",
         "form-shadow": "0 1px 5px rgb(138, 137, 137)",
       },
