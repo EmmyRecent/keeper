@@ -1,4 +1,7 @@
 import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const CreateArea = ({ onAdd }) => {
   const [input, setInput] = useState({
@@ -36,6 +39,14 @@ const CreateArea = ({ onAdd }) => {
     setIsClicked(true);
   };
 
+  const theme = createTheme({
+    palette: {
+      yellow: {
+        main: "#f5ba13",
+      },
+    },
+  });
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -62,7 +73,22 @@ const CreateArea = ({ onAdd }) => {
         className="text-lg outline-none md:text-xl"
       ></textarea>
 
-      {isClicked && <button className="button text-sm">Add</button>}
+      {isClicked && (
+        <ThemeProvider theme={theme}>
+          <Fab
+            sx={{
+              position: "absolute",
+              bottom: "-23px",
+              right: "18px",
+            }}
+            color="yellow"
+            size="medium"
+            onClick={handleSubmit}
+          >
+            <AddIcon sx={{ fontSize: 28 }} />
+          </Fab>
+        </ThemeProvider>
+      )}
 
       <p className="absolute -bottom-8 text-sm text-red-600 md:text-base">
         {errorMessage}
