@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=McLaren&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  html {
+    @apply font-montserrat text-[100%];
+  }
+
+  section {
+    @apply min-h-screen border-[2px] border-purple-900;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    width: min(1110px - calc(100% - 32px));
+    margin-inline: auto;
+  }
+}
