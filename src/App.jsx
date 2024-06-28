@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreateArea from "./components/CreateArea";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Note from "./components/Note";
 
 const App = () => {
-  const [newInput, setNewInput] = useState([]);
+  const [newInput, setNewInput] = useState(() => {
+    // Get data from local storage
+    const saveData = localStorage.getItem("notes");
+
+    return saveData ? JSON.parse(saveData) : [];
+  });
+
+  // Save data to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(newInput));
+  }, [newInput]);
 
   // A function to handle the addition of notes
   const addItem = (items, setInput) => {
